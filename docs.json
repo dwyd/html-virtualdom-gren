@@ -1,0 +1,1 @@
+{"Transmutable.Html.VirtualDom":{"name":"Transmutable.Html.VirtualDom","comment":" Transmute HTML into virtual DOM.\n\n@docs toVirtualDom\n\n","unions":[],"aliases":[],"values":[{"name":"toVirtualDom","comment":" The transmutationist.\n","type":"Transmutable.Html.Interior.Html msg -> VirtualDom.Node msg"}],"binops":[]}}
