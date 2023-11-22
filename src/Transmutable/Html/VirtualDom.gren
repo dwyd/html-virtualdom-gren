@@ -61,7 +61,7 @@ toVirtualDom =
                             Nothing ->
                                 VirtualDom.node tagName handledAttributes
         , injectDescendants = \parentNodeResult childNodeResults -> parentNodeResult childNodeResults
-        , text = VirtualDom.text
+        , text = \_ -> VirtualDom.text
         }
 
 

@@ -1,15 +1,17 @@
 {
-  "type": "package",
-  "platform": "browser",
-  "name": "icidasset/html-virtualdom-gren",
-  "summary": "Virtual DOM transmutationist for the icidasset/html-gren package",
-  "license": "BSD-3-Clause",
-  "version": "1.0.0",
-  "exposed-modules": ["Transmutable.Html.VirtualDom"],
-  "gren-version": "0.3.0 <= v < 0.4.0",
-  "dependencies": {
-    "gren-lang/browser": "3.0.0 <= v < 4.0.0",
-    "gren-lang/core": "4.0.1 <= v < 5.0.0",
-    "icidasset/html-gren": "1.0.1 <= v < 2.0.0"
-  }
+    "type": "package",
+    "platform": "browser",
+    "name": "icidasset/html-virtualdom-gren",
+    "summary": "Virtual DOM transmutationist for the icidasset/html-gren package",
+    "license": "BSD-3-Clause",
+    "version": "1.0.1",
+    "exposed-modules": [
+        "Transmutable.Html.VirtualDom"
+    ],
+    "gren-version": "0.3.0 <= v < 0.4.0",
+    "dependencies": {
+        "gren-lang/browser": "3.0.0 <= v < 4.0.0",
+        "gren-lang/core": "4.0.1 <= v < 5.0.0",
+        "icidasset/html-gren": "2.0.0 <= v < 3.0.0"
+    }
 }
