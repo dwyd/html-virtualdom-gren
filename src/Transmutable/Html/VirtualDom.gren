@@ -5,8 +5,9 @@ module Transmutable.Html.VirtualDom exposing ( toVirtualDom )
 @docs toVirtualDom
 
 -}
-import Transmutable.Html.Interior exposing (..)
+
 import Json.Encode
+import Transmutable.Html.Interior exposing (..)
 import VirtualDom
 
 
@@ -60,7 +61,13 @@ toVirtualDom =
 
                             Nothing ->
                                 VirtualDom.node tagName handledAttributes
-        , injectDescendants = \parentNodeResult childNodeResults -> parentNodeResult childNodeResults
+        , injectDescendants = \parentNodeResult childNodeResults _ -> parentNodeResult childNodeResults
+
+        , --
+          cdata = \_ _ -> VirtualDom.text ""
+        , comment = \_ _ -> VirtualDom.text ""
+        , declaration = \_ _ -> VirtualDom.text ""
+        , processingInstruction = \_ _ -> VirtualDom.text ""
         , text = \_ -> VirtualDom.text
         }
 
