@@ -63,7 +63,7 @@ toVirtualDom =
                                 VirtualDom.node tagName handledAttributes
         , injectDescendants = \parentNodeResult childNodeResults _ -> parentNodeResult childNodeResults
 
-        , --
+        , -- 
           cdata = \_ _ -> VirtualDom.text ""
         , comment = \_ _ -> VirtualDom.text ""
         , declaration = \_ _ -> VirtualDom.text ""
