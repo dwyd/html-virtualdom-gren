@@ -22,9 +22,9 @@ toVirtualDom =
                     handledAttributes =
                         Array.map handleAttribute attributes
                 in
-                case namespace of
+                when namespace is
                     Just ns ->
-                        case key of
+                        when key is
                             Just k ->
                                 \nodes ->
                                     VirtualDom.keyedNodeNS
@@ -44,7 +44,7 @@ toVirtualDom =
                                 VirtualDom.nodeNS ns tagName handledAttributes
 
                     Nothing ->
-                        case key of
+                        when key is
                             Just k ->
                                 \nodes ->
                                     VirtualDom.keyedNode
@@ -73,30 +73,30 @@ toVirtualDom =
 
 
 handleAttribute attr =
-    case attr of
-        Attribute key value ->
+    when attr is
+        Attribute { key = key, value = value } ->
             VirtualDom.attribute key value
 
-        BoolProperty key value ->
+        BoolProperty { key = key, value = value } ->
             VirtualDom.property key (Json.Encode.bool value)
 
-        Event name (Normal decoder) ->
+        Event { name = name, decoder = (Normal decoder) } ->
             VirtualDom.on name (VirtualDom.Normal decoder)
 
-        Event name (MayStopPropagation decoder) ->
+        Event { name = name, decoder = (MayStopPropagation decoder) } ->
             VirtualDom.on name (VirtualDom.MayStopPropagation decoder)
 
-        Event name (MayPreventDefault decoder) ->
+        Event { name = name, decoder = (MayPreventDefault decoder) } ->
             VirtualDom.on name (VirtualDom.MayPreventDefault decoder)
 
-        Event name (Custom decoder) ->
+        Event { name = name, decoder = (Custom decoder) } ->
             VirtualDom.on name (VirtualDom.Custom decoder)
 
-        StringProperty key value ->
+        StringProperty { key = key, value = value } ->
             VirtualDom.property key (Json.Encode.string value)
 
-        Style key value ->
+        Style { key = key, value } ->
             VirtualDom.style key value
 
-        ValueProperty key value ->
+        ValueProperty { key = key, value } ->
             VirtualDom.property key value
